@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">拼豆图纸</string>
+    <string name="pattern_preview">拼豆图纸预览，双指缩放，双击还原</string>
+    <string name="ready">选择图片开始制作 · 双指缩放，双击还原</string>
+    <string name="camera">拍照</string>
+    <string name="gallery">相册</string>
+    <string name="generate">生成</string>
+    <string name="grid_columns">图纸列数</string>
+    <string name="columns_value">%1$d 列</string>
+    <string name="remove_background">去背景</string>
+    <string name="show_grid">网格</string>
+    <string name="show_symbols">符号</string>
+    <string name="save_png">保存高清 PNG 图纸</string>
+    <string name="loading_image">正在读取图片…</string>
+    <string name="image_loaded">图片已读取（%1$d × %2$d），正在生成…</string>
+    <string name="generating">正在匹配拼豆颜色…</string>
+    <string name="pattern_summary">%1$d × %2$d · 共 %3$d 颗 · %4$d 色</string>
+    <string name="exporting">正在生成高清图纸…</string>
+    <string name="export_success">图纸已保存</string>
+    <string name="operation_failed">操作失败，请重试</string>
+</resources>
