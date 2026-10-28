@@ -130,7 +130,7 @@
             android:stepSize="1"
             android:value="32"
             android:valueFrom="16"
-            android:valueTo="80"
+            android:valueTo="200"
             app:labelBehavior="gone" />
 
         <LinearLayout

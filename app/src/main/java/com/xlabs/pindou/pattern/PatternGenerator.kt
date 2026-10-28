@@ -16,8 +16,8 @@ object PatternGenerator {
     ): BeadPattern {
         require(width > 0 && height > 0) { "Image dimensions must be positive" }
         require(pixels.size == width * height) { "Pixel array does not match image dimensions" }
-        val targetColumns = columns.coerceIn(1, 100)
-        val targetRows = (targetColumns * height.toDouble() / width).roundToInt().coerceIn(1, 120)
+        val targetColumns = columns.coerceIn(1, 200)
+        val targetRows = (targetColumns * height.toDouble() / width).roundToInt().coerceIn(1, 400)
         val sampled = Array(targetColumns * targetRows) { index ->
             val column = index % targetColumns
             val row = index / targetColumns

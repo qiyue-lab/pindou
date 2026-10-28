@@ -117,6 +117,21 @@ class PatternGeneratorTest {
         assertEquals("P09", pattern.colorAt(1, 1)?.code)
     }
 
+    @Test
+    fun supportsTwoHundredColumns() {
+        val pattern = PatternGenerator.generate(
+            IntArray(400) { 0xFFC9A463.toInt() },
+            200,
+            2,
+            200,
+            removeDarkBackground = false,
+        )
+
+        assertEquals(200, pattern.columns)
+        assertEquals(2, pattern.rows)
+        assertEquals(400, pattern.totalBeads)
+    }
+
     @Test(expected = IllegalArgumentException::class)
     fun rejectsMismatchedPixelArray() {
         PatternGenerator.generate(IntArray(3), 2, 2, 8)

@@ -14,6 +14,7 @@ object PatternRenderer {
     private const val HEADER = 112f
     private const val LEGEND_GAP = 28f
     private const val LEGEND_ROW_HEIGHT = 68f
+    private const val MAX_EXPORT_DIMENSION = 6500f
 
     data class Size(val width: Float, val height: Float)
 
@@ -27,8 +28,15 @@ object PatternRenderer {
 
     fun createBitmap(pattern: BeadPattern, showGrid: Boolean, showSymbols: Boolean): Bitmap {
         val size = sizeOf(pattern)
-        val bitmap = Bitmap.createBitmap(size.width.toInt(), size.height.toInt(), Bitmap.Config.ARGB_8888)
-        draw(Canvas(bitmap), pattern, showGrid, showSymbols)
+        val exportScale = minOf(1f, MAX_EXPORT_DIMENSION / max(size.width, size.height))
+        val bitmap = Bitmap.createBitmap(
+            (size.width * exportScale).toInt(),
+            (size.height * exportScale).toInt(),
+            Bitmap.Config.ARGB_8888,
+        )
+        val canvas = Canvas(bitmap)
+        canvas.scale(exportScale, exportScale)
+        draw(canvas, pattern, showGrid, showSymbols)
         return bitmap
     }
 
